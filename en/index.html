@@ -33,7 +33,7 @@ body{margin:0;background:#F5F0E6;color:#1A1B18;font-family:"IBM Plex Sans",syste
 a{color:#7A5A17;text-decoration:none}
 a:hover{color:#7B2B22}
 p{hyphens:auto}
-@media(max-width:760px){.hero-grid{grid-template-columns:1fr!important;gap:42px!important}.hero-menu{position:static!important;width:auto!important;margin-top:0!important}.info-grid{grid-template-columns:1fr!important}}
+@media(max-width:760px){.info-grid{grid-template-columns:1fr!important}}
 .hv1:hover{background:#14231F;color:#F5F0E6}
 .hv10:hover{color:#7B2B22;border-bottom-color:#7B2B22}
 .hv11:hover{color:#D9B872}
@@ -51,6 +51,14 @@ a:focus-visible,button:focus-visible{outline:2px solid #A8802F;outline-offset:3p
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 .skip-link{position:absolute;left:-9999px;top:0;z-index:100;background:#14231F;color:#F5F0E6;padding:12px 18px;font-size:15px}.skip-link:focus{left:8px;top:8px}
 .nav-scroll{position:relative}.nav-scroll::after{content:'';position:absolute;top:0;right:0;bottom:0;width:40px;pointer-events:none;background:linear-gradient(90deg,rgba(251,248,242,0),#FBF8F2)}@media(min-width:900px){.nav-scroll::after{display:none}}
+.gal{display:grid;grid-template-columns:repeat(6,1fr);gap:24px 20px}
+.gal figure{margin:0;grid-column:span 2}
+.gal figure.land{grid-column:span 3}
+.gal img{width:100%;display:block;object-fit:cover;border:1px solid #DED3BC;aspect-ratio:3/4}
+.gal figure.land img{aspect-ratio:3/2}
+.gal figcaption{margin-top:11px;font-size:13.5px;line-height:1.6;color:#4C4A42}
+@media(max-width:900px){.gal{grid-template-columns:repeat(4,1fr)}.gal figure.land{grid-column:span 4}}
+@media(max-width:560px){.gal{grid-template-columns:repeat(2,1fr)}.gal figure{grid-column:span 1}.gal figure.land{grid-column:span 2}}
 img{height:auto}
 </style>
 </head>
@@ -74,6 +82,7 @@ img{height:auto}
       <a class="hv9" href="news.html" style="flex:0 0 auto;padding:13px 0 11px;font-size:14.5px;color:#3A3C36;white-space:nowrap">News &amp; Events</a>
       <a class="hv9" href="collections.html" style="flex:0 0 auto;padding:13px 0 11px;font-size:14.5px;color:#3A3C36;white-space:nowrap">Topics &amp; Collections</a>
       <a class="hv9" href="about.html" style="flex:0 0 auto;padding:13px 0 11px;font-size:14.5px;color:#3A3C36;white-space:nowrap">The Association</a>
+      <a class="hv9" href="join.html" style="flex:0 0 auto;padding:13px 0 11px;font-size:14.5px;color:#3A3C36;white-space:nowrap">Become a member</a>
       <a class="hv9" href="donate.html" style="flex:0 0 auto;padding:13px 0 11px;font-size:14.5px;color:#3A3C36;white-space:nowrap">Donate</a>
       <a class="hv9" href="contact.html" style="flex:0 0 auto;padding:13px 0 11px;font-size:14.5px;color:#3A3C36;white-space:nowrap">Contact</a>
     </div>
@@ -84,7 +93,7 @@ img{height:auto}
 <section style="position:relative;background:#0E1A18;overflow:hidden">
   <img src="../assets/bibliothek-solothurn.jpeg" alt="Glass cabinets with alphabetically labelled shelves in Solothurn" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:0.62;filter:saturate(0.72) contrast(1.02)" width="2000" height="1500" fetchpriority="high" decoding="async">
   <div style="position:absolute;inset:0;background:linear-gradient(100deg,rgba(14,26,24,0.97) 0%,rgba(14,26,24,0.94) 38%,rgba(14,26,24,0.80) 72%,rgba(14,26,24,0.68) 100%)"></div>
-  <div class="hero-grid" style="position:relative;max-width:1280px;margin:0 auto;padding:clamp(72px,10vw,132px) 24px clamp(56px,7vw,88px);display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,280px);gap:clamp(40px,8vw,120px);align-items:end">
+  <div class="hero-grid" style="position:relative;max-width:1280px;margin:0 auto;padding:clamp(72px,10vw,132px) 24px clamp(56px,7vw,88px)">
     <div style="max-width:760px">
       <div style="display:flex;align-items:center;gap:14px;margin-bottom:30px">
         <span style="display:block;width:34px;height:1px;background:#D9B872"></span>
@@ -97,16 +106,8 @@ img{height:auto}
       <div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:34px">
         <a class="hv4" href="join.html" style="background:#7B2B22;color:#FBF8F2;font-size:15.5px;font-weight:600;padding:16px 30px;border-radius:2px">Become a member</a>
         <a class="hv5" href="donate.html" style="border:1px solid rgba(217,184,114,0.55);color:#F5F0E6;font-size:15.5px;font-weight:500;padding:16px 30px;border-radius:2px">Donate</a>
+        <a class="hv5" href="#mithelfende" style="border:1px solid rgba(217,184,114,0.55);color:#F5F0E6;font-size:15.5px;font-weight:500;padding:16px 30px;border-radius:2px">Get involved</a>
       </div>
-    </div>
-    <div class="hero-menu" style="align-self:start;position:relative;z-index:2;margin-top:clamp(28px,5vw,64px);border-top:1px solid rgba(217,184,114,0.38);border-bottom:1px solid rgba(217,184,114,0.38)">
-      <div style="padding:15px 0 12px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:0.18em;text-transform:uppercase;color:#8E9A93">Navigation</div>
-      <nav aria-label="Quick access" style="display:flex;flex-direction:column">
-        <a class="hv11" href="#mithelfende" style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0;border-top:1px solid rgba(217,184,114,0.2);color:#F5F0E6;font-size:15px">I would like to help <span aria-hidden="true" style="color:#D9B872">↓</span></a>
-        <a class="hv11" href="donate.html" style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0;border-top:1px solid rgba(217,184,114,0.2);color:#F5F0E6;font-size:15px">I would like to donate <span aria-hidden="true" style="color:#D9B872">→</span></a>
-        <a class="hv11" href="#nachlass" style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0;border-top:1px solid rgba(217,184,114,0.2);color:#F5F0E6;font-size:15px">I would like to donate books <span aria-hidden="true" style="color:#D9B872">↓</span></a>
-        <a class="hv11" href="#was-wir-tun" style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0;border-top:1px solid rgba(217,184,114,0.2);color:#F5F0E6;font-size:15px">I would like to learn more <span aria-hidden="true" style="color:#D9B872">↓</span></a>
-      </nav>
     </div>
   </div>
 </section>
@@ -120,19 +121,22 @@ img{height:auto}
     <h2 style="margin:0 0 44px;font-family:Spectral,Georgia,serif;font-weight:400;font-size:clamp(1.85rem,3.4vw,2.7rem);line-height:1.15;letter-spacing:-0.01em;color:#14231F;max-width:22ch">The association and its library</h2>
     <div class="info-grid" style="display:grid;grid-template-columns:minmax(0,1.35fr) minmax(260px,0.65fr);gap:clamp(36px,7vw,80px);align-items:start">
       <div style="max-width:72ch">
-        <p style="margin:0 0 22px;font-family:Spectral,Georgia,serif;font-size:1.08rem;line-height:1.75;color:#3A3C33">The founding of the Verein Bibliotheca Psychonautica laid the cornerstone for a future foundation whose aim is to bring together and preserve substantial private collections of psychonautic literature, videos, DVDs, CDs, records, pictures, photographs, artworks, correspondence, diaries, research material and manuscripts – in order to build the most comprehensive possible library on drugs and altered states, keeping psychonautic knowledge of altered states of consciousness alive.</p>
+        <p style="margin:0 0 22px;font-family:Spectral,Georgia,serif;font-size:1.08rem;line-height:1.75;color:#3A3C33">Many important records of psychonautic intellectual history still sit in private libraries, in attics, in cellars or in forgotten periodical collections that could easily disappear.</p>
+        <p style="margin:0 0 22px;font-family:Spectral,Georgia,serif;font-size:1.08rem;line-height:1.75;color:#3A3C33">The <em>Bibliotheca Psychonautica</em> wants to preserve this knowledge. To do that we need people like you, willing to contribute their holdings, their skills, their time and their contacts to building a publicly accessible physical and digital library. Every source rescued widens the knowledge available to future generations.</p>
+        <p style="margin:0 0 22px;font-family:Spectral,Georgia,serif;font-size:1.08rem;line-height:1.75;color:#3A3C33">The founding of the Verein <em>Bibliotheca Psychonautica</em> laid the cornerstone for a future foundation whose aim is to bring together and preserve substantial private collections of psychonautic literature, videos, DVDs, CDs, records, pictures, photographs, artworks, correspondence, diaries, research material and manuscripts – in order to build the most comprehensive possible library on drugs and altered states, keeping psychonautic knowledge of altered states of consciousness alive.</p>
+        <p style="margin:0 0 22px;font-family:Spectral,Georgia,serif;font-size:1.08rem;line-height:1.75;color:#3A3C33">Our aim is to secure scattered knowledge, catalogue it and make it accessible to research, education and an interested public.</p>
         <p style="margin:0 0 22px;font-family:Spectral,Georgia,serif;font-size:1.08rem;line-height:1.75;color:#3A3C33">Collectors of specialist psychonautic literature can bequeath their private estates to the association or the foundation, in order to preserve this valuable material, make it accessible to other interested people and protect it from self-serving, profit-driven and commercial interests – as well as from careless disposal.</p>
         <p style="margin:0 0 22px;font-family:Spectral,Georgia,serif;font-size:1.08rem;line-height:1.75;color:#3A3C33">Since July 2013, the association has had shelf space on the premises of Nachtschatten Verlag in Solothurn to build the library. From 2028, a further physical location is to be created in Basel in cooperation with the Gaia Media foundation.</p>
-        <p style="margin:0;font-family:Spectral,Georgia,serif;font-size:1.08rem;line-height:1.75;color:#3A3C33">Several extensive collections of books and journals have already arrived and are being catalogued step by step. The list of library holdings recorded so far can be requested from the association. Borrowing books is reserved exclusively for members and is governed by the association's board.</p>
+        <p style="margin:0 0 22px;font-family:Spectral,Georgia,serif;font-size:1.08rem;line-height:1.75;color:#3A3C33">Several extensive collections of books and journals have already arrived and are being catalogued step by step. The list of library holdings recorded so far can be requested from the association. Borrowing books is reserved exclusively for members and is governed by the association's board.</p>
+        <p style="margin:0;font-family:Spectral,Georgia,serif;font-size:1.08rem;line-height:1.75;color:#3A3C33">Building an archive takes many kinds of collaboration: appraisal, inventory, cataloguing, digitisation, research, translation, editing, public relations and events. We welcome people who would like to contribute their skills voluntarily or on a project basis.</p>
       </div>
       <div>
         <div style="padding-top:4px;border-top:1px solid #E2D8C2">
-          <div style="margin:18px 0 12px;font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:#736B59">Core functions</div>
-          <div style="display:flex;flex-wrap:wrap;gap:10px 24px">
-            <span style="font-family:Spectral,Georgia,serif;font-size:1.2rem;font-weight:500;color:#14231F">Collecting</span>
-            <span style="font-family:Spectral,Georgia,serif;font-size:1.2rem;font-weight:500;color:#14231F">Preserving</span>
-            <span style="font-family:Spectral,Georgia,serif;font-size:1.2rem;font-weight:500;color:#14231F">Cataloguing</span>
-            <span style="font-family:Spectral,Georgia,serif;font-size:1.2rem;font-weight:500;color:#14231F">Making it accessible</span>
+          <div style="margin:18px 0 14px;font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:#736B59">Mission</div>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <span style="font-family:Spectral,Georgia,serif;font-size:1.2rem;font-weight:500;line-height:1.35;color:#14231F">Preserve scattered knowledge.</span>
+            <span style="font-family:Spectral,Georgia,serif;font-size:1.2rem;font-weight:500;line-height:1.35;color:#14231F">Make sources accessible.</span>
+            <span style="font-family:Spectral,Georgia,serif;font-size:1.2rem;font-weight:500;line-height:1.35;color:#14231F">Keep writing history together.</span>
           </div>
         </div>
         <aside style="margin-top:30px;background:#FBF8F2;border:1px solid #DED3BC;padding:30px 28px 32px">
@@ -173,67 +177,6 @@ img{height:auto}
   </div>
 </section>
 
-<section style="padding:clamp(64px,8vw,104px) 24px">
-  <div style="max-width:1280px;margin:0 auto">
-    <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px">
-      <span style="display:block;width:34px;height:1px;background:#A8802F"></span>
-      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.24em;text-transform:uppercase;color:#7A5A17">Holdings</span>
-    </div>
-    <h2 style="margin:0 0 44px;font-family:Spectral,Georgia,serif;font-weight:400;font-size:clamp(1.85rem,3.4vw,2.7rem);line-height:1.15;letter-spacing:-0.01em;color:#14231F;max-width:20ch">The library already exists</h2>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(212px,1fr));gap:26px 22px;margin-bottom:clamp(48px,6vw,72px)">
-      <figure style="margin:0">
-        <img src="../assets/bibliothek-solothurn.jpeg" alt="Shelves in Solothurn" style="width:100%;aspect-ratio:4/5;object-fit:cover;display:block;border:1px solid #DED3BC" width="2000" height="1500" loading="lazy" decoding="async">
-        <figcaption style="margin-top:12px;font-size:13.5px;line-height:1.6;color:#4C4A42">The library in Solothurn: the holdings are being catalogued.</figcaption>
-      </figure>
-      <figure style="margin:0">
-        <img src="../assets/nachlass-raetsch-spinnenweben.jpeg" alt="Dusty shelf from the estate of Christian Rätsch" style="width:100%;aspect-ratio:4/5;object-fit:cover;display:block;border:1px solid #DED3BC" width="1200" height="1600" loading="lazy" decoding="async">
-        <figcaption style="margin-top:12px;font-size:13.5px;line-height:1.6;color:#4C4A42">From the estate of Christian Rätsch: books that would otherwise have been lost.</figcaption>
-      </figure>
-      <figure style="margin:0">
-        <img src="../assets/nachlass-raetsch-stapel.jpeg" alt="Stack of books with Sheldrake, Capra, Ram Dass, Schrödinger" style="width:100%;aspect-ratio:4/5;object-fit:cover;display:block;border:1px solid #DED3BC" width="1200" height="1600" loading="lazy" decoding="async">
-        <figcaption style="margin-top:12px;font-size:13.5px;line-height:1.6;color:#4C4A42">Consciousness research, physics, philosophy: the collection is broad.</figcaption>
-      </figure>
-      <figure style="margin:0">
-        <img src="../assets/hofmann-titelseite-signiert.jpeg" alt="Signed title page of LSD, My Problem Child" style="width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 30%;display:block;border:1px solid #DED3BC" width="899" height="1599" loading="lazy" decoding="async">
-        <figcaption style="margin-top:12px;font-size:13.5px;line-height:1.6;color:#4C4A42">Signed by Albert Hofmann and Jonathan Ott:&nbsp;a treasure from the collection.</figcaption>
-      </figure>
-    </div>
-  </div>
-</section>
-
-<section id="nachlass" style="background:#14231F;color:#D8D4C7;padding:clamp(64px,8vw,104px) 24px">
-  <div style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(40px,5vw,72px);align-items:center">
-    <figure style="margin:0">
-      <img src="../assets/nachlass-raetsch-spinnenweben.jpeg" alt="Cobweb-covered shelf from the Christian Rätsch estate" style="width:100%;aspect-ratio:4/5;object-fit:cover;display:block;border:1px solid #2B3A34" width="1200" height="1600" loading="lazy" decoding="async">
-      <figcaption style="margin-top:14px;font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.7;letter-spacing:0.04em;color:#8E9A93">From the estate of Christian Rätsch: books that would otherwise have been lost.</figcaption>
-    </figure>
-    <div>
-      <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px">
-        <span style="display:block;width:34px;height:1px;background:#D9B872"></span>
-        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.24em;text-transform:uppercase;color:#D9B872">The path into the library</span>
-      </div>
-      <h2 style="margin:0 0 20px;font-family:Spectral,Georgia,serif;font-weight:400;font-size:clamp(1.85rem,3.4vw,2.7rem);line-height:1.15;letter-spacing:-0.01em;color:#F5F0E6;max-width:20ch">What happens after your message</h2>
-      <p style="margin:0 0 40px;font-size:16px;line-height:1.72;color:#B9BDB4;max-width:52ch">Three steps, without haste and without obligation. We also advise relatives who need to sort out an estate.</p>
-      <div style="display:flex;flex-direction:column;gap:26px">
-        <div style="display:flex;gap:20px;align-items:flex-start">
-          <div style="flex:0 0 auto;width:42px;height:42px;border:1px solid rgba(217,184,114,0.45);display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:13px;color:#D9B872">01</div>
-          <div><h3 style="margin:0 0 6px;font-family:Spectral,Georgia,serif;font-weight:500;font-size:1.25rem;color:#F5F0E6">Get in touch</h3><p style="margin:0;font-size:15px;line-height:1.7;color:#B9BDB4;max-width:48ch">A short email is enough. We discuss size, subjects and timing – in confidence.</p></div>
-        </div>
-        <div style="display:flex;gap:20px;align-items:flex-start">
-          <div style="flex:0 0 auto;width:42px;height:42px;border:1px solid rgba(217,184,114,0.45);display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:13px;color:#D9B872">02</div>
-          <div><h3 style="margin:0 0 6px;font-family:Spectral,Georgia,serif;font-weight:500;font-size:1.25rem;color:#F5F0E6">Review &amp; Collection</h3><p style="margin:0;font-size:15px;line-height:1.7;color:#B9BDB4;max-width:48ch">We review the collection on site, work out what fits the library and organise transport.</p></div>
-        </div>
-        <div style="display:flex;gap:20px;align-items:flex-start">
-          <div style="flex:0 0 auto;width:42px;height:42px;border:1px solid rgba(217,184,114,0.45);display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:13px;color:#D9B872">03</div>
-          <div><h3 style="margin:0 0 6px;font-family:Spectral,Georgia,serif;font-weight:500;font-size:1.25rem;color:#F5F0E6">Cataloguing &amp; Access</h3><p style="margin:0;font-size:15px;line-height:1.7;color:#B9BDB4;max-width:48ch">The holdings are recorded and made available to members for research and borrowing.</p></div>
-        </div>
-      </div>
-      <a class="hv5" href="contact.html" style="display:inline-block;margin-top:36px;border:1px solid rgba(217,184,114,0.55);color:#F5F0E6;font-size:15.5px;font-weight:500;padding:15px 28px;border-radius:2px">Offer a collection or estate</a>
-    </div>
-  </div>
-</section>
-
-
 <section style="padding:clamp(64px,8vw,104px) 24px;border-bottom:1px solid #E2D8C2">
   <div style="max-width:1280px;margin:0 auto">
     <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px">
@@ -241,7 +184,10 @@ img{height:auto}
       <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.24em;text-transform:uppercase;color:#7A5A17">Voices</span>
     </div>
     <h2 style="margin:0 0 14px;font-family:Spectral,Georgia,serif;font-weight:400;font-size:clamp(1.85rem,3.4vw,2.7rem);line-height:1.15;letter-spacing:-0.01em;color:#14231F">What the library means</h2>
-    <p style="margin:0 0 40px;font-size:15px;line-height:1.7;color:#4C4A42;max-width:60ch">[PLACEHOLDER] Real quotes and portraits are currently being gathered. The three cards show the intended format.</p>
+    <p style="margin:0 0 20px;font-family:Spectral,Georgia,serif;font-size:1.08rem;line-height:1.75;color:#3A3C33;max-width:74ch">The history of psychoactive substances and altered states of consciousness still shapes public debate about health, therapy, drug policy, spirituality, self-determination and risk culture. The Bibliotheca Psychonautica preserves sources that help place those debates in historical context and counter simplified, purely present-day narratives. In doing so it lays the ground for a nuanced, informed and responsible public conversation.</p>
+    <p style="margin:0 0 20px;font-family:Spectral,Georgia,serif;font-size:1.08rem;line-height:1.75;color:#3A3C33;max-width:74ch">Its holdings open up new questions about the history of research, medicine, psychotherapy, culture, politics and social movements – particularly where sources have so far been private, hard to find or never systematically catalogued. As a growing archive, the Bibliotheca Psychonautica supports interdisciplinary research and, in the long run, provides a dependable basis for scholarship, teaching and public education.</p>
+    <p style="margin:0 0 14px;font-family:Spectral,Georgia,serif;font-size:1.08rem;line-height:1.75;color:#14231F">Experts from research and practice on the library:</p>
+    <p style="margin:0 0 34px;font-size:14.5px;line-height:1.7;color:#4C4A42;max-width:60ch">[PLACEHOLDER] Real quotes and portraits are currently being gathered. The three cards show the intended format.</p>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:22px">
       <figure style="margin:0;background:#FBF8F2;border:1px solid #DED3BC;padding:28px">
         <span style="display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:#7A5A17;border:1px solid #E0D3B4;background:#F3EBD9;padding:4px 8px">Example</span>
@@ -270,6 +216,85 @@ img{height:auto}
     </div>
   </div>
 </section>
+
+<section style="padding:clamp(64px,8vw,104px) 24px">
+  <div style="max-width:1280px;margin:0 auto">
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px">
+      <span style="display:block;width:34px;height:1px;background:#A8802F"></span>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.24em;text-transform:uppercase;color:#7A5A17">Holdings</span>
+    </div>
+    <h2 style="margin:0 0 44px;font-family:Spectral,Georgia,serif;font-weight:400;font-size:clamp(1.85rem,3.4vw,2.7rem);line-height:1.15;letter-spacing:-0.01em;color:#14231F;max-width:20ch">The library already exists</h2>
+    <div class="gal">
+      <figure class="land">
+        <img src="../assets/bibliothek-solothurn.jpeg" alt="Shelves in Solothurn" width="2000" height="1500" loading="lazy" decoding="async">
+        <figcaption>The library in Solothurn: the holdings are being inventoried.</figcaption>
+      </figure>
+      <figure class="land">
+        <img src="../assets/audiokassetten-digitalisierung.jpeg" alt="Audio cassettes awaiting digitisation" width="1600" height="1200" loading="lazy" decoding="async">
+        <figcaption>Carrying video and audio cassettes into the 21st century: old recordings, ready for digitisation.</figcaption>
+      </figure>
+      <figure>
+        <img src="../assets/nachlass-raetsch-spinnenweben.jpeg" alt="Dusty shelf from the estate of Christian Rätsch" width="1200" height="1600" loading="lazy" decoding="async">
+        <figcaption>From the estate of Christian Rätsch: books that would otherwise have been lost.</figcaption>
+      </figure>
+      <figure>
+        <img src="../assets/nachlass-raetsch-stapel.jpeg" alt="Stack of books with Sheldrake, Capra, Ram Dass, Schrödinger" width="1200" height="1600" loading="lazy" decoding="async">
+        <figcaption>Consciousness research, physics, philosophy: the collection is broad.</figcaption>
+      </figure>
+      <figure>
+        <img src="../assets/hofmann-titelseite-signiert.jpeg" alt="Signed title page of LSD, My Problem Child" style="object-position:center 30%" width="899" height="1599" loading="lazy" decoding="async">
+        <figcaption>Signed by Albert Hofmann and Jonathan Ott:&nbsp;a treasure from the collection.</figcaption>
+      </figure>
+      <figure>
+        <img src="../assets/seltene-quellen.jpeg" alt="Rare first-hand sources" width="1200" height="1600" loading="lazy" decoding="async">
+        <figcaption>Hidden histories: rare first-hand sources.</figcaption>
+      </figure>
+      <figure>
+        <img src="../assets/historische-quellen.jpeg" alt="Historical sources and magazines" width="1200" height="1600" loading="lazy" decoding="async">
+        <figcaption>Old knowledge, new insights: books and magazines as historical sources.</figcaption>
+      </figure>
+      <figure>
+        <img src="../assets/kosmische-comics.jpeg" alt="Cosmic comics and visual culture" width="1200" height="1600" loading="lazy" decoding="async">
+        <figcaption>Creative comics: cosmic jokes are timeless.</figcaption>
+      </figure>
+    </div>
+    <p style="margin:26px 0 clamp(48px,6vw,72px);font-size:15px;line-height:1.7;color:#4C4A42"><a class="hv10" href="collections.html" style="color:#7A5A17;border-bottom:1px solid #C9BCA0;padding-bottom:2px">See all topics and collections →</a></p>
+  </div>
+</section>
+
+<section id="nachlass" style="background:#14231F;color:#D8D4C7;padding:clamp(64px,8vw,104px) 24px">
+  <div style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(40px,5vw,72px);align-items:center">
+    <figure style="margin:0">
+      <img src="../assets/nachlass-raetsch-spinnenweben.jpeg" alt="Cobweb-covered shelf from the Christian Rätsch estate" style="width:100%;aspect-ratio:4/5;object-fit:cover;display:block;border:1px solid #2B3A34" width="1200" height="1600" loading="lazy" decoding="async">
+      <figcaption style="margin-top:14px;font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.7;letter-spacing:0.04em;color:#8E9A93">From the estate of Christian Rätsch: books that would otherwise have been lost.</figcaption>
+    </figure>
+    <div>
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px">
+        <span style="display:block;width:34px;height:1px;background:#D9B872"></span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.24em;text-transform:uppercase;color:#D9B872">The path into the library</span>
+      </div>
+      <h2 style="margin:0 0 20px;font-family:Spectral,Georgia,serif;font-weight:400;font-size:clamp(1.85rem,3.4vw,2.7rem);line-height:1.15;letter-spacing:-0.01em;color:#F5F0E6;max-width:20ch">How it works</h2>
+      <p style="margin:0 0 20px;font-size:16px;line-height:1.72;color:#B9BDB4;max-width:52ch">Three steps, without haste and without obligation. We also advise relatives who need to sort out an estate.</p>
+      <p style="margin:0 0 38px;font-family:Spectral,Georgia,serif;font-style:italic;font-size:1.2rem;line-height:1.5;color:#D9B872;max-width:38ch">Private holdings can become shared knowledge.</p>
+      <div style="display:flex;flex-direction:column;gap:26px">
+        <div style="display:flex;gap:20px;align-items:flex-start">
+          <div style="flex:0 0 auto;width:42px;height:42px;border:1px solid rgba(217,184,114,0.45);display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:13px;color:#D9B872">01</div>
+          <div><h3 style="margin:0 0 6px;font-family:Spectral,Georgia,serif;font-weight:500;font-size:1.25rem;color:#F5F0E6">Get in touch</h3><p style="margin:0;font-size:15px;line-height:1.7;color:#B9BDB4;max-width:48ch">A short email is enough. We discuss size, subjects and timing – in confidence.</p></div>
+        </div>
+        <div style="display:flex;gap:20px;align-items:flex-start">
+          <div style="flex:0 0 auto;width:42px;height:42px;border:1px solid rgba(217,184,114,0.45);display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:13px;color:#D9B872">02</div>
+          <div><h3 style="margin:0 0 6px;font-family:Spectral,Georgia,serif;font-weight:500;font-size:1.25rem;color:#F5F0E6">Review &amp; Collection</h3><p style="margin:0;font-size:15px;line-height:1.7;color:#B9BDB4;max-width:48ch">We review the collection on site, work out what fits the library and organise transport.</p></div>
+        </div>
+        <div style="display:flex;gap:20px;align-items:flex-start">
+          <div style="flex:0 0 auto;width:42px;height:42px;border:1px solid rgba(217,184,114,0.45);display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:13px;color:#D9B872">03</div>
+          <div><h3 style="margin:0 0 6px;font-family:Spectral,Georgia,serif;font-weight:500;font-size:1.25rem;color:#F5F0E6">Cataloguing &amp; Access</h3><p style="margin:0;font-size:15px;line-height:1.7;color:#B9BDB4;max-width:48ch">The holdings are recorded and made available to members for research and borrowing.</p></div>
+        </div>
+      </div>
+      <a class="hv5" href="contact.html" style="display:inline-block;margin-top:36px;border:1px solid rgba(217,184,114,0.55);color:#F5F0E6;font-size:15.5px;font-weight:500;padding:15px 28px;border-radius:2px">Offer a collection or estate</a>
+    </div>
+  </div>
+</section>
+
 
 
 
@@ -302,6 +327,7 @@ img{height:auto}
       <p style="margin:0;font-size:14.5px;line-height:1.7;color:#8E9A93;max-width:52ch">If you are interested, send an email to <a class="hv12" href="mailto:info@bibliotheca-psychonautica.org" style="color:#D9B872;border-bottom:1px solid rgba(217,184,114,0.35)">info@bibliotheca-psychonautica.org</a> or use the <a class="hv12" href="contact.html" style="color:#D9B872;border-bottom:1px solid rgba(217,184,114,0.35)">Form for messages and enquiries</a>.</p>
     </div>
     <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:flex-start">
+      <a class="hv5" href="contact.html?interesse=Project%20development#mitmachen" style="border:1px solid rgba(217,184,114,0.55);color:#F5F0E6;font-size:15.5px;font-weight:500;padding:17px 32px;border-radius:2px">Help build the library</a>
       <a class="hv4" href="join.html" style="background:#7B2B22;color:#FBF8F2;font-size:15.5px;font-weight:600;padding:17px 32px;border-radius:2px">Become a member</a>
       <a class="hv5" href="donate.html" style="border:1px solid rgba(217,184,114,0.55);color:#F5F0E6;font-size:15.5px;font-weight:500;padding:17px 32px;border-radius:2px">Donate</a>
     </div>
@@ -315,7 +341,7 @@ img{height:auto}
       <img src="../assets/reference/logo-2012.png" alt="Bibliotheca Psychonautica" style="display:block;width:221px;max-width:100%;height:auto" width="221" height="32" decoding="async">
       <p style="margin:20px 0 0;color:#A8A499;max-width:30ch">Association for the preservation and promotion of mind-moving knowledge</p>
       <p style="margin:20px 0 0">Kronengasse 11<br>CH – 4500 Solothurn<br>Switzerland</p>
-      <p style="margin:14px 0 0;color:#A8A499">Phone +41 32 621 89 49<br>Fax +41 32 621 89 47</p>
+      <p style="margin:14px 0 0;color:#A8A499">Phone +49 1516 5196756</p>
       <p style="margin:14px 0 0"><a class="hv12" href="mailto:info@bibliotheca-psychonautica.org" style="color:#D9B872;border-bottom:1px solid rgba(217,184,114,0.35)">info@bibliotheca-psychonautica.org</a></p>
     </div>
     <div>

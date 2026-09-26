@@ -33,7 +33,7 @@ body{margin:0;background:#F5F0E6;color:#1A1B18;font-family:"IBM Plex Sans",syste
 a{color:#7A5A17;text-decoration:none}
 a:hover{color:#7B2B22}
 p{hyphens:auto}
-@media(max-width:760px){.hero-grid{grid-template-columns:1fr!important;gap:42px!important}.hero-menu{position:static!important;width:auto!important;margin-top:0!important}.info-grid{grid-template-columns:1fr!important}}
+@media(max-width:760px){.info-grid{grid-template-columns:1fr!important}}
 .hv1:hover{background:#14231F;color:#F5F0E6}
 .hv10:hover{color:#7B2B22;border-bottom-color:#7B2B22}
 .hv11:hover{color:#D9B872}
@@ -51,6 +51,14 @@ a:focus-visible,button:focus-visible{outline:2px solid #A8802F;outline-offset:3p
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 .skip-link{position:absolute;left:-9999px;top:0;z-index:100;background:#14231F;color:#F5F0E6;padding:12px 18px;font-size:15px}.skip-link:focus{left:8px;top:8px}
 .nav-scroll{position:relative}.nav-scroll::after{content:'';position:absolute;top:0;right:0;bottom:0;width:40px;pointer-events:none;background:linear-gradient(90deg,rgba(251,248,242,0),#FBF8F2)}@media(min-width:900px){.nav-scroll::after{display:none}}
+.gal{display:grid;grid-template-columns:repeat(6,1fr);gap:24px 20px}
+.gal figure{margin:0;grid-column:span 2}
+.gal figure.land{grid-column:span 3}
+.gal img{width:100%;display:block;object-fit:cover;border:1px solid #DED3BC;aspect-ratio:3/4}
+.gal figure.land img{aspect-ratio:3/2}
+.gal figcaption{margin-top:11px;font-size:13.5px;line-height:1.6;color:#4C4A42}
+@media(max-width:900px){.gal{grid-template-columns:repeat(4,1fr)}.gal figure.land{grid-column:span 4}}
+@media(max-width:560px){.gal{grid-template-columns:repeat(2,1fr)}.gal figure{grid-column:span 1}.gal figure.land{grid-column:span 2}}
 img{height:auto}
 </style>
 </head>
@@ -74,6 +82,7 @@ img{height:auto}
       <a class="hv9" href="Neuigkeiten.html" style="flex:0 0 auto;padding:13px 0 11px;font-size:14.5px;color:#3A3C36;white-space:nowrap">Neuigkeiten &amp; Events</a>
       <a class="hv9" href="Themen-und-Sammlungen.html" style="flex:0 0 auto;padding:13px 0 11px;font-size:14.5px;color:#3A3C36;white-space:nowrap">Themen &amp; Sammlungen</a>
       <a class="hv9" href="Der-Verein.html" style="flex:0 0 auto;padding:13px 0 11px;font-size:14.5px;color:#3A3C36;white-space:nowrap">Der Verein</a>
+      <a class="hv9" href="Mitglied-werden.html" style="flex:0 0 auto;padding:13px 0 11px;font-size:14.5px;color:#3A3C36;white-space:nowrap">Mitglied werden</a>
       <a class="hv9" href="Spenden.html" style="flex:0 0 auto;padding:13px 0 11px;font-size:14.5px;color:#3A3C36;white-space:nowrap">Spenden</a>
       <a class="hv9" href="Kontakt.html" style="flex:0 0 auto;padding:13px 0 11px;font-size:14.5px;color:#3A3C36;white-space:nowrap">Kontakt</a>
     </div>
@@ -84,7 +93,7 @@ img{height:auto}
 <section style="position:relative;background:#0E1A18;overflow:hidden">
   <img src="assets/bibliothek-solothurn.jpeg" alt="Glasvitrinen mit alphabetisch beschrifteten Regalen in Solothurn" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:0.62;filter:saturate(0.72) contrast(1.02)" width="2000" height="1500" fetchpriority="high" decoding="async">
   <div style="position:absolute;inset:0;background:linear-gradient(100deg,rgba(14,26,24,0.97) 0%,rgba(14,26,24,0.94) 38%,rgba(14,26,24,0.80) 72%,rgba(14,26,24,0.68) 100%)"></div>
-  <div class="hero-grid" style="position:relative;max-width:1280px;margin:0 auto;padding:clamp(72px,10vw,132px) 24px clamp(56px,7vw,88px);display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,280px);gap:clamp(40px,8vw,120px);align-items:end">
+  <div class="hero-grid" style="position:relative;max-width:1280px;margin:0 auto;padding:clamp(72px,10vw,132px) 24px clamp(56px,7vw,88px)">
     <div style="max-width:760px">
       <div style="display:flex;align-items:center;gap:14px;margin-bottom:30px">
         <span style="display:block;width:34px;height:1px;background:#D9B872"></span>
@@ -97,16 +106,8 @@ img{height:auto}
       <div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:34px">
         <a class="hv4" href="Mitglied-werden.html" style="background:#7B2B22;color:#FBF8F2;font-size:15.5px;font-weight:600;padding:16px 30px;border-radius:2px">Mitglied werden</a>
         <a class="hv5" href="Spenden.html" style="border:1px solid rgba(217,184,114,0.55);color:#F5F0E6;font-size:15.5px;font-weight:500;padding:16px 30px;border-radius:2px">Spenden</a>
+        <a class="hv5" href="#mithelfende" style="border:1px solid rgba(217,184,114,0.55);color:#F5F0E6;font-size:15.5px;font-weight:500;padding:16px 30px;border-radius:2px">Mitmachen</a>
       </div>
-    </div>
-    <div class="hero-menu" style="align-self:start;position:relative;z-index:2;margin-top:clamp(28px,5vw,64px);border-top:1px solid rgba(217,184,114,0.38);border-bottom:1px solid rgba(217,184,114,0.38)">
-      <div style="padding:15px 0 12px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:0.18em;text-transform:uppercase;color:#8E9A93">Navigation</div>
-      <nav aria-label="Schnellzugriff" style="display:flex;flex-direction:column">
-        <a class="hv11" href="#mithelfende" style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0;border-top:1px solid rgba(217,184,114,0.2);color:#F5F0E6;font-size:15px">Ich möchte mithelfen <span aria-hidden="true" style="color:#D9B872">↓</span></a>
-        <a class="hv11" href="Spenden.html" style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0;border-top:1px solid rgba(217,184,114,0.2);color:#F5F0E6;font-size:15px">Ich möchte spenden <span aria-hidden="true" style="color:#D9B872">→</span></a>
-        <a class="hv11" href="#nachlass" style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0;border-top:1px solid rgba(217,184,114,0.2);color:#F5F0E6;font-size:15px">Ich möchte Bücher spenden <span aria-hidden="true" style="color:#D9B872">↓</span></a>
-        <a class="hv11" href="#was-wir-tun" style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0;border-top:1px solid rgba(217,184,114,0.2);color:#F5F0E6;font-size:15px">Ich möchte mehr erfahren <span aria-hidden="true" style="color:#D9B872">↓</span></a>
-      </nav>
     </div>
   </div>
 </section>
@@ -120,19 +121,22 @@ img{height:auto}
     <h2 style="margin:0 0 44px;font-family:Spectral,Georgia,serif;font-weight:400;font-size:clamp(1.85rem,3.4vw,2.7rem);line-height:1.15;letter-spacing:-0.01em;color:#14231F;max-width:22ch">Der Verein und seine Bibliothek</h2>
     <div class="info-grid" style="display:grid;grid-template-columns:minmax(0,1.35fr) minmax(260px,0.65fr);gap:clamp(36px,7vw,80px);align-items:start">
       <div style="max-width:72ch">
-        <p style="margin:0 0 22px;font-family:Spectral,Georgia,serif;font-size:1.08rem;line-height:1.75;color:#3A3C33">Mit Gründung des Vereins Bibliotheca Psychonautica wurde der Grundstein gelegt für eine zukünftige Stiftung mit dem Ziel der Zusammenführung und Bewahrung fundierter Privatsammlungen von psychonautischer Literatur, Videos, DVDs, CDs, Schallplatten, Bildern, Fotos, Kunstwerken, Briefwechseln, Tagebüchern, Forschungsmaterial und Manuskripten, um eine möglichst umfangreiche drogen- und rauschkundliche Bibliothek aufzubauen, die das psychonautische Wissen über veränderte Bewusstseinszustände lebendig erhält.</p>
+        <p style="margin:0 0 22px;font-family:Spectral,Georgia,serif;font-size:1.08rem;line-height:1.75;color:#3A3C33">Viele wichtige Zeugnisse psychonautischer Wissensgeschichte liegen noch in privaten Bibliotheken, auf Dachböden, in Kellern oder in vergessenen Zeitschriftensammlungen, die leicht verschwinden könnten.</p>
+        <p style="margin:0 0 22px;font-family:Spectral,Georgia,serif;font-size:1.08rem;line-height:1.75;color:#3A3C33">Die <em>Bibliotheca Psychonautica</em> möchte dieses Wissen bewahren. Dafür brauchen wir Menschen wie dich, die ihre Bestände, ihre Fähigkeiten, ihre Zeit und ihre Kontakte für den Aufbau einer öffentlich zugänglichen physischen und digitalen Bibliothek einbringen möchten. Jede gerettete Quelle erweitert das Wissen, das künftigen Generationen zur Verfügung steht.</p>
+        <p style="margin:0 0 22px;font-family:Spectral,Georgia,serif;font-size:1.08rem;line-height:1.75;color:#3A3C33">Mit Gründung des Vereins <em>Bibliotheca Psychonautica</em> wurde der Grundstein gelegt für eine zukünftige Stiftung mit dem Ziel der Zusammenführung und Bewahrung fundierter Privatsammlungen von psychonautischer Literatur, Videos, DVDs, CDs, Schallplatten, Bildern, Fotos, Kunstwerken, Briefwechseln, Tagebüchern, Forschungsmaterial und Manuskripten, um eine möglichst umfangreiche drogen- und rauschkundliche Bibliothek aufzubauen, die das psychonautische Wissen über veränderte Bewusstseinszustände lebendig erhält.</p>
+        <p style="margin:0 0 22px;font-family:Spectral,Georgia,serif;font-size:1.08rem;line-height:1.75;color:#3A3C33">Unser Ziel ist es, verstreutes Wissen zu sichern, zu erschliessen und für Forschung, Bildung und eine interessierte Öffentlichkeit zugänglich zu machen.</p>
         <p style="margin:0 0 22px;font-family:Spectral,Georgia,serif;font-size:1.08rem;line-height:1.75;color:#3A3C33">SammlerInnen von psychonautischer Fachliteratur können ihre privaten Nachlässe dem Verein bzw. der Stiftung vermachen, um dieses wertvolle Material zu erhalten und anderen Interessenten zugänglich zu machen und es vor eigennützigen, gewinnorientierten und kommerziellen Absichten, aber auch vor unachtsamer Entsorgung zu schützen.</p>
         <p style="margin:0 0 22px;font-family:Spectral,Georgia,serif;font-size:1.08rem;line-height:1.75;color:#3A3C33">Für den Aufbau der Bibliothek stehen dem Verein seit Juli 2013 Regalflächen in den Räumen des Nachtschatten Verlages in Solothurn zur Verfügung. Ab 2028 soll in Zusammenarbeit mit der Stiftung Gaia Media ein weiterer physischer Ort in Basel entstehen.</p>
-        <p style="margin:0;font-family:Spectral,Georgia,serif;font-size:1.08rem;line-height:1.75;color:#3A3C33">Es sind bereits einige umfangreiche Sammlungen von Büchern und Journalen eingegangen, die schrittweise inventarisiert werden. Die Liste des bis jetzt erfassten Bibliotheksbestandes kann beim Verein angefordert werden. Das Entleihen von Büchern ist ausschliesslich Mitgliedern vorbehalten und wird durch den Vereinsvorstand geregelt.</p>
+        <p style="margin:0 0 22px;font-family:Spectral,Georgia,serif;font-size:1.08rem;line-height:1.75;color:#3A3C33">Es sind bereits einige umfangreiche Sammlungen von Büchern und Journalen eingegangen, die schrittweise inventarisiert werden. Die Liste des bis jetzt erfassten Bibliotheksbestandes kann beim Verein angefordert werden. Das Entleihen von Büchern ist ausschliesslich Mitgliedern vorbehalten und wird durch den Vereinsvorstand geregelt.</p>
+        <p style="margin:0;font-family:Spectral,Georgia,serif;font-size:1.08rem;line-height:1.75;color:#3A3C33">Der Aufbau eines Archivs braucht viele Formen der Mitarbeit: Sichtung, Inventarisierung, Katalogisierung, Digitalisierung, Recherche, Übersetzung, Redaktion, Öffentlichkeitsarbeit und Veranstaltungsarbeit. Wir freuen uns über Menschen, die ihre Kompetenzen ehrenamtlich oder projektbezogen einbringen möchten.</p>
       </div>
       <div>
         <div style="padding-top:4px;border-top:1px solid #E2D8C2">
-          <div style="margin:18px 0 12px;font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:#736B59">Kernfunktionen</div>
-          <div style="display:flex;flex-wrap:wrap;gap:10px 24px">
-            <span style="font-family:Spectral,Georgia,serif;font-size:1.2rem;font-weight:500;color:#14231F">Sammeln</span>
-            <span style="font-family:Spectral,Georgia,serif;font-size:1.2rem;font-weight:500;color:#14231F">Bewahren</span>
-            <span style="font-family:Spectral,Georgia,serif;font-size:1.2rem;font-weight:500;color:#14231F">Inventarisieren</span>
-            <span style="font-family:Spectral,Georgia,serif;font-size:1.2rem;font-weight:500;color:#14231F">Zugänglich machen</span>
+          <div style="margin:18px 0 14px;font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:#736B59">Auftrag</div>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <span style="font-family:Spectral,Georgia,serif;font-size:1.2rem;font-weight:500;line-height:1.35;color:#14231F">Verstreutes Wissen bewahren.</span>
+            <span style="font-family:Spectral,Georgia,serif;font-size:1.2rem;font-weight:500;line-height:1.35;color:#14231F">Quellen zugänglich machen.</span>
+            <span style="font-family:Spectral,Georgia,serif;font-size:1.2rem;font-weight:500;line-height:1.35;color:#14231F">Geschichte gemeinsam weiterschreiben.</span>
           </div>
         </div>
         <aside style="margin-top:30px;background:#FBF8F2;border:1px solid #DED3BC;padding:30px 28px 32px">
@@ -173,67 +177,6 @@ img{height:auto}
   </div>
 </section>
 
-<section style="padding:clamp(64px,8vw,104px) 24px">
-  <div style="max-width:1280px;margin:0 auto">
-    <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px">
-      <span style="display:block;width:34px;height:1px;background:#A8802F"></span>
-      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.24em;text-transform:uppercase;color:#7A5A17">Bestand</span>
-    </div>
-    <h2 style="margin:0 0 44px;font-family:Spectral,Georgia,serif;font-weight:400;font-size:clamp(1.85rem,3.4vw,2.7rem);line-height:1.15;letter-spacing:-0.01em;color:#14231F;max-width:20ch">Die Bibliothek gibt es schon</h2>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(212px,1fr));gap:26px 22px;margin-bottom:clamp(48px,6vw,72px)">
-      <figure style="margin:0">
-        <img src="assets/bibliothek-solothurn.jpeg" alt="Regale in Solothurn" style="width:100%;aspect-ratio:4/5;object-fit:cover;display:block;border:1px solid #DED3BC" width="2000" height="1500" loading="lazy" decoding="async">
-        <figcaption style="margin-top:12px;font-size:13.5px;line-height:1.6;color:#4C4A42">Die Bibliothek in Solothurn: Bestand wird inventarisiert.</figcaption>
-      </figure>
-      <figure style="margin:0">
-        <img src="assets/nachlass-raetsch-spinnenweben.jpeg" alt="Verstaubtes Regal aus dem Nachlass von Christian Rätsch" style="width:100%;aspect-ratio:4/5;object-fit:cover;display:block;border:1px solid #DED3BC" width="1200" height="1600" loading="lazy" decoding="async">
-        <figcaption style="margin-top:12px;font-size:13.5px;line-height:1.6;color:#4C4A42">Aus dem Nachlass von Christian Rätsch: Bücher, die sonst verloren gingen.</figcaption>
-      </figure>
-      <figure style="margin:0">
-        <img src="assets/nachlass-raetsch-stapel.jpeg" alt="Bücherstapel mit Sheldrake, Capra, Ram Dass, Schrödinger" style="width:100%;aspect-ratio:4/5;object-fit:cover;display:block;border:1px solid #DED3BC" width="1200" height="1600" loading="lazy" decoding="async">
-        <figcaption style="margin-top:12px;font-size:13.5px;line-height:1.6;color:#4C4A42">Bewusstseinsforschung, Physik, Philosophie: die Sammlung ist breit.</figcaption>
-      </figure>
-      <figure style="margin:0">
-        <img src="assets/hofmann-titelseite-signiert.jpeg" alt="Signierte Titelseite von LSD, My Problem Child" style="width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 30%;display:block;border:1px solid #DED3BC" width="899" height="1599" loading="lazy" decoding="async">
-        <figcaption style="margin-top:12px;font-size:13.5px;line-height:1.6;color:#4C4A42">Signiert von Albert Hofmann und Jonathan Ott:&nbsp;ein Schatz aus der Sammlung.</figcaption>
-      </figure>
-    </div>
-  </div>
-</section>
-
-<section id="nachlass" style="background:#14231F;color:#D8D4C7;padding:clamp(64px,8vw,104px) 24px">
-  <div style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(40px,5vw,72px);align-items:center">
-    <figure style="margin:0">
-      <img src="assets/nachlass-raetsch-spinnenweben.jpeg" alt="Spinnwebenbedecktes Regal aus dem Nachlass Christian Rätsch" style="width:100%;aspect-ratio:4/5;object-fit:cover;display:block;border:1px solid #2B3A34" width="1200" height="1600" loading="lazy" decoding="async">
-      <figcaption style="margin-top:14px;font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.7;letter-spacing:0.04em;color:#8E9A93">Aus dem Nachlass von Christian Rätsch: Bücher, die sonst verloren gingen.</figcaption>
-    </figure>
-    <div>
-      <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px">
-        <span style="display:block;width:34px;height:1px;background:#D9B872"></span>
-        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.24em;text-transform:uppercase;color:#D9B872">Der Weg in die Bibliothek</span>
-      </div>
-      <h2 style="margin:0 0 20px;font-family:Spectral,Georgia,serif;font-weight:400;font-size:clamp(1.85rem,3.4vw,2.7rem);line-height:1.15;letter-spacing:-0.01em;color:#F5F0E6;max-width:20ch">Was nach deiner Nachricht passiert</h2>
-      <p style="margin:0 0 40px;font-size:16px;line-height:1.72;color:#B9BDB4;max-width:52ch">Drei Schritte, ohne Eile und ohne Verpflichtung. Wir beraten auch Angehörige, die einen Nachlass ordnen müssen.</p>
-      <div style="display:flex;flex-direction:column;gap:26px">
-        <div style="display:flex;gap:20px;align-items:flex-start">
-          <div style="flex:0 0 auto;width:42px;height:42px;border:1px solid rgba(217,184,114,0.45);display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:13px;color:#D9B872">01</div>
-          <div><h3 style="margin:0 0 6px;font-family:Spectral,Georgia,serif;font-weight:500;font-size:1.25rem;color:#F5F0E6">Kontakt aufnehmen</h3><p style="margin:0;font-size:15px;line-height:1.7;color:#B9BDB4;max-width:48ch">Eine kurze Mail genügt. Wir besprechen Umfang, Themen und Zeitrahmen – vertraulich.</p></div>
-        </div>
-        <div style="display:flex;gap:20px;align-items:flex-start">
-          <div style="flex:0 0 auto;width:42px;height:42px;border:1px solid rgba(217,184,114,0.45);display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:13px;color:#D9B872">02</div>
-          <div><h3 style="margin:0 0 6px;font-family:Spectral,Georgia,serif;font-weight:500;font-size:1.25rem;color:#F5F0E6">Sichtung &amp; Abholung</h3><p style="margin:0;font-size:15px;line-height:1.7;color:#B9BDB4;max-width:48ch">Wir sichten die Sammlung vor Ort, klären, was in die Bibliothek passt, und organisieren den Transport.</p></div>
-        </div>
-        <div style="display:flex;gap:20px;align-items:flex-start">
-          <div style="flex:0 0 auto;width:42px;height:42px;border:1px solid rgba(217,184,114,0.45);display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:13px;color:#D9B872">03</div>
-          <div><h3 style="margin:0 0 6px;font-family:Spectral,Georgia,serif;font-weight:500;font-size:1.25rem;color:#F5F0E6">Inventarisierung &amp; Zugang</h3><p style="margin:0;font-size:15px;line-height:1.7;color:#B9BDB4;max-width:48ch">Die Bestände werden erfasst und stehen Mitgliedern zur Recherche und Ausleihe zur Verfügung.</p></div>
-        </div>
-      </div>
-      <a class="hv5" href="Kontakt.html" style="display:inline-block;margin-top:36px;border:1px solid rgba(217,184,114,0.55);color:#F5F0E6;font-size:15.5px;font-weight:500;padding:15px 28px;border-radius:2px">Sammlung oder Nachlass anbieten</a>
-    </div>
-  </div>
-</section>
-
-
 <section style="padding:clamp(64px,8vw,104px) 24px;border-bottom:1px solid #E2D8C2">
   <div style="max-width:1280px;margin:0 auto">
     <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px">
@@ -241,7 +184,10 @@ img{height:auto}
       <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.24em;text-transform:uppercase;color:#7A5A17">Stimmen</span>
     </div>
     <h2 style="margin:0 0 14px;font-family:Spectral,Georgia,serif;font-weight:400;font-size:clamp(1.85rem,3.4vw,2.7rem);line-height:1.15;letter-spacing:-0.01em;color:#14231F">Was die Bibliothek bedeutet</h2>
-    <p style="margin:0 0 40px;font-size:15px;line-height:1.7;color:#4C4A42;max-width:60ch">[PLATZHALTER] Echte Zitate und Porträts werden derzeit gesammelt. Die drei Karten zeigen das vorgesehene Format.</p>
+    <p style="margin:0 0 20px;font-family:Spectral,Georgia,serif;font-size:1.08rem;line-height:1.75;color:#3A3C33;max-width:74ch">Die Geschichte psychoaktiver Substanzen und veränderter Bewusstseinszustände prägt bis heute gesellschaftliche Debatten über Gesundheit, Therapie, Drogenpolitik, Spiritualität, Selbstbestimmung und Risikokultur. Die Bibliotheca Psychonautica bewahrt Quellen, die helfen, diese Debatten historisch einzuordnen und vereinfachenden, rein gegenwartsbezogenen Erzählungen entgegenzuwirken. Dadurch schafft sie eine Grundlage für einen differenzierten, informierten und verantwortungsvollen öffentlichen Austausch.</p>
+    <p style="margin:0 0 20px;font-family:Spectral,Georgia,serif;font-size:1.08rem;line-height:1.75;color:#3A3C33;max-width:74ch">Ihre Bestände ermöglichen neue Fragen zur Geschichte von Forschung, Medizin, Psychotherapie, Kultur, Politik und sozialen Bewegungen – insbesondere dort, wo Quellen bislang privat, schwer auffindbar oder nicht systematisch erschlossen sind. Als wachsendes Archiv fördert die Bibliotheca Psychonautica interdisziplinäre Forschung und schafft langfristig eine verlässliche Grundlage für wissenschaftliche Arbeiten, Lehre und öffentliche Wissensvermittlung.</p>
+    <p style="margin:0 0 14px;font-family:Spectral,Georgia,serif;font-size:1.08rem;line-height:1.75;color:#14231F">Fachleute aus Wissenschaft und Praxis sagen dazu:</p>
+    <p style="margin:0 0 34px;font-size:14.5px;line-height:1.7;color:#4C4A42;max-width:60ch">[PLATZHALTER] Echte Zitate und Porträts werden derzeit gesammelt. Die drei Karten zeigen das vorgesehene Format.</p>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:22px">
       <figure style="margin:0;background:#FBF8F2;border:1px solid #DED3BC;padding:28px">
         <span style="display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:#7A5A17;border:1px solid #E0D3B4;background:#F3EBD9;padding:4px 8px">Beispiel</span>
@@ -270,6 +216,85 @@ img{height:auto}
     </div>
   </div>
 </section>
+
+<section style="padding:clamp(64px,8vw,104px) 24px">
+  <div style="max-width:1280px;margin:0 auto">
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px">
+      <span style="display:block;width:34px;height:1px;background:#A8802F"></span>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.24em;text-transform:uppercase;color:#7A5A17">Bestand</span>
+    </div>
+    <h2 style="margin:0 0 44px;font-family:Spectral,Georgia,serif;font-weight:400;font-size:clamp(1.85rem,3.4vw,2.7rem);line-height:1.15;letter-spacing:-0.01em;color:#14231F;max-width:20ch">Die Bibliothek gibt es schon</h2>
+    <div class="gal">
+      <figure class="land">
+        <img src="assets/bibliothek-solothurn.jpeg" alt="Regale in Solothurn" width="2000" height="1500" loading="lazy" decoding="async">
+        <figcaption>Die Bibliothek in Solothurn: der Bestand wird inventarisiert.</figcaption>
+      </figure>
+      <figure class="land">
+        <img src="assets/audiokassetten-digitalisierung.jpeg" alt="Audiokassetten, bereit zur Digitalisierung" width="1600" height="1200" loading="lazy" decoding="async">
+        <figcaption>Video- und Audiokassetten ins 21. Jahrhundert retten: alte Aufnahmen, bereit für die Digitalisierung.</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/nachlass-raetsch-spinnenweben.jpeg" alt="Verstaubtes Regal aus dem Nachlass von Christian Rätsch" width="1200" height="1600" loading="lazy" decoding="async">
+        <figcaption>Aus dem Nachlass von Christian Rätsch: Bücher, die sonst verloren gingen.</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/nachlass-raetsch-stapel.jpeg" alt="Bücherstapel mit Sheldrake, Capra, Ram Dass, Schrödinger" width="1200" height="1600" loading="lazy" decoding="async">
+        <figcaption>Bewusstseinsforschung, Physik, Philosophie: die Sammlung ist breit.</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/hofmann-titelseite-signiert.jpeg" alt="Signierte Titelseite von LSD, My Problem Child" style="object-position:center 30%" width="899" height="1599" loading="lazy" decoding="async">
+        <figcaption>Signiert von Albert Hofmann und Jonathan Ott:&nbsp;ein Schatz aus der Sammlung.</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/seltene-quellen.jpeg" alt="Seltene Quellen aus erster Hand" width="1200" height="1600" loading="lazy" decoding="async">
+        <figcaption>Verborgene Geschichten: seltene Quellen aus erster Hand.</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/historische-quellen.jpeg" alt="Historische Quellen und Magazine" width="1200" height="1600" loading="lazy" decoding="async">
+        <figcaption>Altes Wissen, neue Einsichten: Bücher und Magazine als historische Quellen.</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/kosmische-comics.jpeg" alt="Kosmische Comics und visuelle Kultur" width="1200" height="1600" loading="lazy" decoding="async">
+        <figcaption>Kreative Comics: kosmische Witze sind zeitlos.</figcaption>
+      </figure>
+    </div>
+    <p style="margin:26px 0 clamp(48px,6vw,72px);font-size:15px;line-height:1.7;color:#4C4A42"><a class="hv10" href="Themen-und-Sammlungen.html" style="color:#7A5A17;border-bottom:1px solid #C9BCA0;padding-bottom:2px">Alle Themen und Sammlungen ansehen →</a></p>
+  </div>
+</section>
+
+<section id="nachlass" style="background:#14231F;color:#D8D4C7;padding:clamp(64px,8vw,104px) 24px">
+  <div style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(40px,5vw,72px);align-items:center">
+    <figure style="margin:0">
+      <img src="assets/nachlass-raetsch-spinnenweben.jpeg" alt="Spinnwebenbedecktes Regal aus dem Nachlass Christian Rätsch" style="width:100%;aspect-ratio:4/5;object-fit:cover;display:block;border:1px solid #2B3A34" width="1200" height="1600" loading="lazy" decoding="async">
+      <figcaption style="margin-top:14px;font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.7;letter-spacing:0.04em;color:#8E9A93">Aus dem Nachlass von Christian Rätsch: Bücher, die sonst verloren gingen.</figcaption>
+    </figure>
+    <div>
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px">
+        <span style="display:block;width:34px;height:1px;background:#D9B872"></span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.24em;text-transform:uppercase;color:#D9B872">Der Weg in die Bibliothek</span>
+      </div>
+      <h2 style="margin:0 0 20px;font-family:Spectral,Georgia,serif;font-weight:400;font-size:clamp(1.85rem,3.4vw,2.7rem);line-height:1.15;letter-spacing:-0.01em;color:#F5F0E6;max-width:20ch">So läuft es ab</h2>
+      <p style="margin:0 0 20px;font-size:16px;line-height:1.72;color:#B9BDB4;max-width:52ch">Drei Schritte, ohne Eile und ohne Verpflichtung. Wir beraten auch Angehörige, die einen Nachlass ordnen müssen.</p>
+      <p style="margin:0 0 38px;font-family:Spectral,Georgia,serif;font-style:italic;font-size:1.2rem;line-height:1.5;color:#D9B872;max-width:38ch">Aus privaten Beständen kann gemeinsames Wissen werden.</p>
+      <div style="display:flex;flex-direction:column;gap:26px">
+        <div style="display:flex;gap:20px;align-items:flex-start">
+          <div style="flex:0 0 auto;width:42px;height:42px;border:1px solid rgba(217,184,114,0.45);display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:13px;color:#D9B872">01</div>
+          <div><h3 style="margin:0 0 6px;font-family:Spectral,Georgia,serif;font-weight:500;font-size:1.25rem;color:#F5F0E6">Kontakt aufnehmen</h3><p style="margin:0;font-size:15px;line-height:1.7;color:#B9BDB4;max-width:48ch">Eine kurze Mail genügt. Wir besprechen Umfang, Themen und Zeitrahmen – vertraulich.</p></div>
+        </div>
+        <div style="display:flex;gap:20px;align-items:flex-start">
+          <div style="flex:0 0 auto;width:42px;height:42px;border:1px solid rgba(217,184,114,0.45);display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:13px;color:#D9B872">02</div>
+          <div><h3 style="margin:0 0 6px;font-family:Spectral,Georgia,serif;font-weight:500;font-size:1.25rem;color:#F5F0E6">Sichtung &amp; Abholung</h3><p style="margin:0;font-size:15px;line-height:1.7;color:#B9BDB4;max-width:48ch">Wir sichten die Sammlung vor Ort, klären, was in die Bibliothek passt, und organisieren den Transport.</p></div>
+        </div>
+        <div style="display:flex;gap:20px;align-items:flex-start">
+          <div style="flex:0 0 auto;width:42px;height:42px;border:1px solid rgba(217,184,114,0.45);display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:13px;color:#D9B872">03</div>
+          <div><h3 style="margin:0 0 6px;font-family:Spectral,Georgia,serif;font-weight:500;font-size:1.25rem;color:#F5F0E6">Inventarisierung &amp; Zugang</h3><p style="margin:0;font-size:15px;line-height:1.7;color:#B9BDB4;max-width:48ch">Die Bestände werden erfasst und stehen Mitgliedern zur Recherche und Ausleihe zur Verfügung.</p></div>
+        </div>
+      </div>
+      <a class="hv5" href="Kontakt.html" style="display:inline-block;margin-top:36px;border:1px solid rgba(217,184,114,0.55);color:#F5F0E6;font-size:15.5px;font-weight:500;padding:15px 28px;border-radius:2px">Sammlung oder Nachlass anbieten</a>
+    </div>
+  </div>
+</section>
+
 
 
 
@@ -302,6 +327,7 @@ img{height:auto}
       <p style="margin:0;font-size:14.5px;line-height:1.7;color:#8E9A93;max-width:52ch">Bei Interesse sende eine Mail an <a class="hv12" href="mailto:info@bibliotheca-psychonautica.org" style="color:#D9B872;border-bottom:1px solid rgba(217,184,114,0.35)">info@bibliotheca-psychonautica.org</a> oder nutze das <a class="hv12" href="Kontakt.html" style="color:#D9B872;border-bottom:1px solid rgba(217,184,114,0.35)">Formular für Mitteilungen und Anfragen</a>.</p>
     </div>
     <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:flex-start">
+      <a class="hv5" href="Kontakt.html?interesse=Projektaufbau#mitmachen" style="border:1px solid rgba(217,184,114,0.55);color:#F5F0E6;font-size:15.5px;font-weight:500;padding:17px 32px;border-radius:2px">Am Aufbau mithelfen</a>
       <a class="hv4" href="Mitglied-werden.html" style="background:#7B2B22;color:#FBF8F2;font-size:15.5px;font-weight:600;padding:17px 32px;border-radius:2px">Mitglied werden</a>
       <a class="hv5" href="Spenden.html" style="border:1px solid rgba(217,184,114,0.55);color:#F5F0E6;font-size:15.5px;font-weight:500;padding:17px 32px;border-radius:2px">Spenden</a>
     </div>
@@ -315,7 +341,7 @@ img{height:auto}
       <img src="assets/reference/logo-2012.png" alt="Bibliotheca Psychonautica" style="display:block;width:221px;max-width:100%;height:auto" width="221" height="32" decoding="async">
       <p style="margin:20px 0 0;color:#A8A499;max-width:30ch">Verein zur Erhaltung und Förderung von geistbewegendem Wissen</p>
       <p style="margin:20px 0 0">Kronengasse 11<br>CH – 4500 Solothurn<br>Switzerland</p>
-      <p style="margin:14px 0 0;color:#A8A499">Fon +41 32 621 89 49<br>Fax +41 32 621 89 47</p>
+      <p style="margin:14px 0 0;color:#A8A499">Fon +49 1516 5196756</p>
       <p style="margin:14px 0 0"><a class="hv12" href="mailto:info@bibliotheca-psychonautica.org" style="color:#D9B872;border-bottom:1px solid rgba(217,184,114,0.35)">info@bibliotheca-psychonautica.org</a></p>
     </div>
     <div>

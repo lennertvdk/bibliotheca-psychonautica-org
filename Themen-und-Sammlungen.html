@@ -52,6 +52,12 @@ a:focus-visible,button:focus-visible{outline:2px solid #A8802F;outline-offset:3p
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 .skip-link{position:absolute;left:-9999px;top:0;z-index:100;background:#14231F;color:#F5F0E6;padding:12px 18px;font-size:15px}.skip-link:focus{left:8px;top:8px}
 .nav-scroll{position:relative}.nav-scroll::after{content:'';position:absolute;top:0;right:0;bottom:0;width:40px;pointer-events:none;background:linear-gradient(90deg,rgba(251,248,242,0),#FBF8F2)}@media(min-width:900px){.nav-scroll::after{display:none}}
+.gal{display:grid;grid-template-columns:repeat(6,1fr);gap:24px 20px}
+.gal figure{margin:0;grid-column:span 2}
+.gal img{width:100%;display:block;object-fit:cover;border:1px solid #DED3BC;aspect-ratio:3/4}
+.gal figcaption{margin-top:11px;font-size:13.5px;line-height:1.6;color:#4C4A42}
+@media(max-width:900px){.gal{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:560px){.gal{grid-template-columns:repeat(2,1fr)}.gal figure{grid-column:span 1}}
 img{height:auto}
 </style>
 </head>
@@ -75,6 +81,7 @@ img{height:auto}
       <a class="hv9" href="Neuigkeiten.html" style="flex:0 0 auto;padding:13px 0 11px;font-size:14.5px;color:#3A3C36;white-space:nowrap">Neuigkeiten &amp; Events</a>
       <a class="hv9" href="Themen-und-Sammlungen.html" style="flex:0 0 auto;padding:13px 0 11px;font-size:14.5px;color:#3A3C36;white-space:nowrap">Themen &amp; Sammlungen<span style="display:block;height:2px;background:#A8802F;margin:11px -2px -13px"></span></a>
       <a class="hv9" href="Der-Verein.html" style="flex:0 0 auto;padding:13px 0 11px;font-size:14.5px;color:#3A3C36;white-space:nowrap">Der Verein</a>
+      <a class="hv9" href="Mitglied-werden.html" style="flex:0 0 auto;padding:13px 0 11px;font-size:14.5px;color:#3A3C36;white-space:nowrap">Mitglied werden</a>
       <a class="hv9" href="Spenden.html" style="flex:0 0 auto;padding:13px 0 11px;font-size:14.5px;color:#3A3C36;white-space:nowrap">Spenden</a>
       <a class="hv9" href="Kontakt.html" style="flex:0 0 auto;padding:13px 0 11px;font-size:14.5px;color:#3A3C36;white-space:nowrap">Kontakt</a>
     </div>
@@ -123,6 +130,41 @@ img{height:auto}
   </div>
 </section>
 
+<section style="padding:clamp(48px,6vw,84px) 24px;border-bottom:1px solid #E2D8C2">
+  <div style="max-width:1280px;margin:0 auto">
+    <div style="display:flex;flex-wrap:wrap;gap:12px 20px;align-items:baseline;margin-bottom:12px">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.24em;text-transform:uppercase;color:#7A5A17">Galerie aus Sammlung und Bestand</div>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:0.14em;text-transform:uppercase;color:#7B2B22;border:1px solid #D9C0B8;background:#F6EAE7;padding:5px 9px">Sammlungsfotos</span>
+    </div>
+    <p style="margin:0 0 32px;font-size:15.5px;line-height:1.7;color:#4C4A42;max-width:62ch">Zur Sammlung gehören auch Bilder, Fotos und Kunstwerke. Die aktuelle Auswahl zeigt reale Bestände und digitale Zugänge aus dem Museumslabor der Bibliothek.</p>
+    <div class="gal">
+      <figure>
+        <img src="assets/seltene-quellen.jpeg" alt="Seltene Quellen aus erster Hand" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block" width="1200" height="1600" loading="lazy" decoding="async">
+        <figcaption>Verborgene Geschichten: seltene Quellen aus erster Hand.</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/historische-quellen.jpeg" alt="Historische Quellen und Magazine" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block" width="1200" height="1600" loading="lazy" decoding="async">
+        <figcaption>Altes Wissen, neue Einsichten: Bücher und Magazine als historische Quellen.</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/kosmische-comics.jpeg" alt="Kosmische Comics und visuelle Kultur" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block" width="1200" height="1600" loading="lazy" decoding="async">
+        <figcaption>Kreative Comics: kosmische Witze sind zeitlos.</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/audiokassetten-digitalisierung.jpeg" alt="Audiokassetten, bereit zur Digitalisierung" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block" width="1600" height="1200" loading="lazy" decoding="async">
+        <figcaption>Video- und Audiokassetten ins 21. Jahrhundert retten: alte Aufnahmen, bereit für die Digitalisierung.</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/bibliothek-solothurn.jpeg" alt="Regale in Solothurn" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block" width="2000" height="1500" loading="lazy" decoding="async">
+        <figcaption>Regale in Solothurn</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/hofmann-titelseite-signiert.jpeg" alt="Signierte Titelseite" style="width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center 28%;display:block" width="899" height="1599" loading="lazy" decoding="async">
+        <figcaption>Signierte Titelseite von LSD, My Problem Child</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
 <section style="padding:clamp(32px,4vw,52px) 24px;border-bottom:1px solid #E2D8C2">
   <div style="max-width:1280px;margin:0 auto">
     <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.24em;text-transform:uppercase;color:#7A5A17;margin-bottom:14px">Sammlungen</div>
@@ -169,42 +211,6 @@ img{height:auto}
   </div>
 </section>
 
-<section style="padding:clamp(48px,6vw,84px) 24px;border-bottom:1px solid #E2D8C2">
-  <div style="max-width:1280px;margin:0 auto">
-    <div style="display:flex;flex-wrap:wrap;gap:12px 20px;align-items:baseline;margin-bottom:12px">
-      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.24em;text-transform:uppercase;color:#7A5A17">Galerie aus Sammlung und Bestand</div>
-      <span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:0.14em;text-transform:uppercase;color:#7B2B22;border:1px solid #D9C0B8;background:#F6EAE7;padding:5px 9px">Sammlungsfotos</span>
-    </div>
-    <p style="margin:0 0 32px;font-size:15.5px;line-height:1.7;color:#4C4A42;max-width:62ch">Zur Sammlung gehören auch Bilder, Fotos und Kunstwerke. Die aktuelle Auswahl zeigt reale Bestände und digitale Zugänge aus dem Museumslabor der Bibliothek.</p>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:18px">
-      <figure style="margin:0;overflow:hidden;border:1px solid #DED3BC;background:#FBF8F2">
-        <img src="assets/seltene-quellen.jpeg" alt="Seltene Quellen aus erster Hand" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block" width="1200" height="1600" loading="lazy" decoding="async">
-        <figcaption style="padding:12px 12px 14px;font-size:13.5px;line-height:1.5;color:#4C4A42">Verborgene Geschichten- Seltene Quellen aus erster Hand</figcaption>
-      </figure>
-      <figure style="margin:0;overflow:hidden;border:1px solid #DED3BC;background:#FBF8F2">
-        <img src="assets/historische-quellen.jpeg" alt="Historische Quellen und Magazine" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block" width="1200" height="1600" loading="lazy" decoding="async">
-        <figcaption style="padding:12px 12px 14px;font-size:13.5px;line-height:1.5;color:#4C4A42">Altes Wissen, neue Einsichten- Bücher und Magazine als historische Quellen</figcaption>
-      </figure>
-      <figure style="margin:0;overflow:hidden;border:1px solid #DED3BC;background:#FBF8F2">
-        <img src="assets/kosmische-comics.jpeg" alt="Kosmische Comics und visuelle Kultur" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block" width="1200" height="1600" loading="lazy" decoding="async">
-        <figcaption style="padding:12px 12px 14px;font-size:13.5px;line-height:1.5;color:#4C4A42">Kreative Comics- Kosmische Witze sind zeitlos</figcaption>
-      </figure>
-      <figure style="margin:0;overflow:hidden;border:1px solid #DED3BC;background:#FBF8F2">
-        <img src="assets/audiokassetten-digitalisierung.jpeg" alt="Audiokassetten digitalisiert" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block" width="1600" height="1200" loading="lazy" decoding="async">
-        <figcaption style="padding:12px 12px 14px;font-size:13.5px;line-height:1.5;color:#4C4A42">Video-und Audiokasetten ins 21. Jahrhundert retten- Alte Aufnahme bereit für die Digitalisierung</figcaption>
-      </figure>
-      <figure style="margin:0;overflow:hidden;border:1px solid #DED3BC;background:#FBF8F2">
-        <img src="assets/bibliothek-solothurn.jpeg" alt="Regale in Solothurn" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block" width="2000" height="1500" loading="lazy" decoding="async">
-        <figcaption style="padding:12px 12px 14px;font-size:13.5px;line-height:1.5;color:#4C4A42">Regale in Solothurn</figcaption>
-      </figure>
-      <figure style="margin:0;overflow:hidden;border:1px solid #DED3BC;background:#FBF8F2">
-        <img src="assets/hofmann-titelseite-signiert.jpeg" alt="Signierte Titelseite" style="width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center 28%;display:block" width="899" height="1599" loading="lazy" decoding="async">
-        <figcaption style="padding:12px 12px 14px;font-size:13.5px;line-height:1.5;color:#4C4A42">Signierte Titelseite von LSD, My Problem Child</figcaption>
-      </figure>
-    </div>
-  </div>
-</section>
-
 </main>
 <footer style="background:#0E1A18;color:#CFCCC1;font-family:'IBM Plex Sans',system-ui,sans-serif;font-size:14.5px;line-height:1.75">
   <div style="max-width:1280px;margin:0 auto;padding:72px 24px 40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:48px 40px">
@@ -212,7 +218,7 @@ img{height:auto}
       <img src="assets/reference/logo-2012.png" alt="Bibliotheca Psychonautica" style="display:block;width:221px;max-width:100%;height:auto" width="221" height="32" decoding="async">
       <p style="margin:20px 0 0;color:#A8A499;max-width:30ch">Verein zur Erhaltung und Förderung von geistbewegendem Wissen</p>
       <p style="margin:20px 0 0">Kronengasse 11<br>CH – 4500 Solothurn<br>Switzerland</p>
-      <p style="margin:14px 0 0;color:#A8A499">Fon +41 32 621 89 49<br>Fax +41 32 621 89 47</p>
+      <p style="margin:14px 0 0;color:#A8A499">Fon +49 1516 5196756</p>
       <p style="margin:14px 0 0"><a class="hv12" href="mailto:info@bibliotheca-psychonautica.org" style="color:#D9B872;border-bottom:1px solid rgba(217,184,114,0.35)">info@bibliotheca-psychonautica.org</a></p>
     </div>
     <div>
